@@ -1,12 +1,12 @@
 <div style="background-color: yellow; margin: 10px; margin-bottom: 30px;">
 	<h6>NOTES FOR DEMONSTRATION</h6>
 	<ol style="font-size: 15px">
-		<li>Upon sign up, we can (should) validate the recruiter either by calling them or call their company.</li>
+		<li>Upon sign up for first time user for a company that is not yet registered, There will be validation.</li>
 		<li>Optional - We can even fill up this page for them during the call.</li>
 		<li>Main recruiter should also be able to list down their colleagues (give email and temp password) who have access to that company</li>
 		<li>The filters below will be the most basic filter in all the searches!</li>
 	</ol>
-	<h6>Process: User sign up > User receives a call > User gets authorisation code > user go to this page</h6>
+	
 </div>
 
 <div style="margin: 20px;">
@@ -21,10 +21,6 @@
 				<div>
 					<%= form.label :name %> 
 					<%= form.text_field :name, placeholder: 'Name of Company' %>
-				</div>
-				
-				<div>
-					Company mission: (1 line to describe what your company mission is)
 				</div>
 				
 				<div>
