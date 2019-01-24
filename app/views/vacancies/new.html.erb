@@ -1,0 +1,42 @@
+<div style="margin: 10px;">
+	<div style="background-color: yellow">
+		<h3>NOTES FOR DEMONSTRATION</h3>
+		<ol>
+			<li>This is where recruiter create a new vacancy to hire. Equivalent to job posting.</li>
+			<li>No charges at this point.</li>
+		</ol>
+	</div>
+
+	<div>
+		<h3>Create a specific vacancy!</h3>
+	</div>
+
+	<div>
+		<div>
+
+			<%=form_for @vacancy do |form|%>
+				<div>
+					<%= form.label :name %> 
+					<%= form.text_field :name, placeholder: 'Name of Role' %>
+				</div>
+				
+				<div>
+					<%= form.label :description %> 
+					<%= form.text_field :description, placeholder: 'Describe this role' %>
+				</div>
+
+				<div>
+					<%= form.label :department %> 
+					<%= form.select(:department, Vacancy::DEPARTMENT_LIST, {:required => true}) %>
+				</div>
+
+				<div>
+					<%= form.label :quantity %> 
+					<%= form.select :quantity, ((1..9).map {|i| [i,i] } << [10,nil]) %>
+				</div>
+			
+				<%=form.submit%>
+			<% end %>
+		</div>
+	</div>
+</div>

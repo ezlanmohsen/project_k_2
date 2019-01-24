@@ -1,0 +1,46 @@
+<div class="text-center" style="margin: 50px;">
+	<h1>Welcome to Jobtivity!</h1>
+	<h4>An headhunting service where you only pay for young talent you hire!</h4>
+</div>
+
+<div class="text-center" style="margin: 50px;">
+	<div style="margin: 20px;">
+		<h3>Have an account!</h3>
+	</div>
+	<div>
+		<!-- Form to create new session when recruiter log in -->
+		<%= form_tag('/login', :method => :post ) do %>
+		  Email: <%= text_field_tag :email %>
+		  Password: <%= password_field_tag :password %>
+		  <%= submit_tag "LOG IN" %>
+			<% flash.each do |key, value| %>
+			    <div> <%= value %> </div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<br>
+
+<div class="text-center" style="margin: 50px;">	
+	<div style="margin: 20px;">
+		<h3>Sign up and take your company to a greater height!</h3>
+	</div>
+
+	<div>
+		<!-- Form to create new recruiters -->
+		<%= form_for :recruiter, url: '/recruiters' do |f| %>
+
+		  Name: <%= f.text_field :name %>
+		  Email: <%= f.text_field :email %>
+		  Company Name: <%= f.text_field :company_temp %>
+		  Mobile Num: <%= f.number_field :mobile %>
+		  Password: <%= f.password_field :password %>
+		  Password Confirmation: <%= f.password_field :password_confirmation %>
+		  <br>
+		  <br>
+		  <%= f.submit "CALL ME FOR CONFIRMATION" %>
+
+		<% end %>
+	</div>
+</div>

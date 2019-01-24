@@ -1,0 +1,197 @@
+<div style="margin: 10px;">
+
+	<div style="background-color: yellow">
+		<h3>NOTES FOR DEMONSTRATION</h3>
+		<ol>
+			<li>This is the main page. In normal day, this is the first page after recruiter login</li>
+			<li>Recruiter can do 2 key things: 1)Set general filters for their companies and see who matched them 2)Create a specific vacancy</li>
+			<li>Any company will get to see which candidates that match their general filters and like their company. For free.</li>
+			<li>Company can add more filters to this general pool at any point of time</li>
+			<li>Jobseeker: Whoever matches these filters will see the company details on their mobile app.</li>
+		</ol>
+	</div>
+
+	<div>
+		<h3>Company Profile</h3>
+		<div style="margin-bottom: 10px;">
+			Name: <%= @company.name %><br>
+			State: <%= @company.state.name %><br>
+			Industry: <%= @company.industry.name %><br>
+			Size: <%= @company.workforce_size %><br>
+			Preference of talent work hours: <%= @company.work_hours %><br>
+			Preference of talent strength: <%= @company.strength %><br>
+		</div>
+		<h6>(Edit Company) - Tell us more about your company!</h6>
+	</div>
+
+	<br>
+
+	<div style="border: 2px blue solid; padding: 10px;">
+		<h4>Your Vacancies!</h4>
+		<% if @vacancies.count == 0%>
+			<div>
+				You have no vacancy yet.
+			</div>
+		<% end %>
+
+		<div>
+			<% @vacancies.each do |v| %>
+				<div style="border: 2px solid blue; padding: 5px;">
+					Name of role: <%= v.name %><br>
+					Description: <%= v.description %><br>
+					Department: <%= v.department %><br>
+					Quantity: <%= v.quantity %><br>
+					Size of talent pool: <%= v.jobseekers.count %> jobseekers<br>
+					Created at: <%= v.created_at.to_date %><br>
+					<br>
+
+					<div class="container-fluid" style="font-size: 15px;">
+					    <div class="row">
+					        <div class="col-sm-4 col-lg-2 py-2 text-center">
+					            <div class="card h-100" style="background-color: lightblue">
+					                <div class="card-body">
+					                    <h4 class="card-title">Question 1</h4>
+					                    <p class="card-text">
+					                    	"<%= v.question_1 %>"<br>
+											<%= v.q1_time %>s<br>
+					                    	</p>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="col-sm-4 col-lg-2 py-2 text-center">
+					            <div class="card h-100" style="background-color: lightblue">
+					                <div class="card-body">
+					                    <h4 class="card-title">Question 2</h4>
+					                    <p class="card-text">
+					                    	"<%= v.question_2 %>"<br>
+											<%= v.q2_time %>s<br>
+					                    	</p>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="col-sm-4 col-lg-2 py-2 text-center">
+					            <div class="card h-100" style="background-color: lightblue">
+					                <div class="card-body">
+					                    <h4 class="card-title">Question 3</h4>
+					                    <p class="card-text">
+					                    	"<%= v.question_3 %>"<br>
+											<%= v.q3_time %>s<br>
+					                    	</p>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="col-sm-4 col-lg-2 py-2 text-center">
+					            <div class="card h-100" style="background-color: lightblue">
+					                <div class="card-body">
+					                    <h4 class="card-title">Question 4</h4>
+					                    <p class="card-text">
+					                    	"<%= v.question_4 %>"<br>
+											<%= v.q4_time %>s<br>
+					                    	</p>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="col-sm-4 col-lg-2 py-2 text-center">
+					            <div class="card h-100" style="background-color: lightblue">
+					                <div class="card-body">
+					                    <h4 class="card-title">Question 5</h4>
+					                    <p class="card-text">
+					                    	"<%= v.question_5 %>"<br>
+											<%= v.q5_time %>s<br>
+					                    	</p>
+					                </div>
+					            </div>
+					        </div>	
+					        <div class="col-sm-4 col-lg-2 py-2 text-center">
+					            <div class="card h-100" style="background-color: lightgreen; font-size: 40px;">
+									<% if v.question_1 =! nil %>
+										<%= link_to "Get your result!", vacancy_interview_results_path(v) %>
+									<% else %>
+										<%= link_to "Check out this vacancy", vacancy_path(v) %>
+									<% end %>
+					            </div>
+					        </div>		        		        		        
+					    </div>
+					</div>
+				<% end %>
+			</div>
+			<div class="btn btn-outline-primary" style="margin-top: 10px;">
+				<h3><%= link_to "Create New Vacancy", new_vacancy_path %></h3>
+			</div>
+		</div>
+	</div>
+
+	<br>	
+
+	<div style="border: 2px blue solid; padding: 10px;">
+		<h4>General Pool!</h4>
+		<div>
+		
+		<div class="text-center">
+			<h6>Filters in Action</h6>
+		</div>
+
+			<div class="row" style="margin: 10px;">
+				<div class="btn btn-outline-primary" style="margin: 2px 5px; color: black">
+					Based in <%= @company.state.name %>
+				</div>
+				<div class="btn btn-outline-primary" style="margin: 2px 5px; color: black">
+					Prefers to work in size <%= @company.workforce_size %> company
+				</div>
+				<div class="btn btn-outline-primary" style="margin: 2px 5px; color: black">
+					Degree in <%= @company.industry.name %>
+				</div>
+				<div class="btn btn-outline-primary" style="margin: 2px 5px; color: black">
+					>1 working experience in <%= @company.industry.name %>
+				</div>
+				<div class="btn btn-outline-primary" style="margin: 2px 5px; color: black">
+					Prefers the working style of <%= @company.work_hours %>
+				</div>
+				<div class="btn btn-outline-danger" style="margin: 2px 5px; color: black">
+					<h6>Add more general filters</h6>
+				</div>
+			</div>
+			
+		</div>
+		<div class="text-center">
+			<h6><%=@jobseekers.count%> candidate(s) matched your general filters and liked you back!</h6>
+		</div>
+		<div class="container-fluid" style="font-size: 15px;">
+		    <div class="row">
+		    	<% @jobseekers.each do |jobseeker|%>
+			        <div class="col-sm-6 col-lg-3 py-2">
+			            <div class="card h-100" style="background-color: rgb(173, 188, 201)">
+			                <div class="card-body">
+			                    <h4 class="card-title">Candidate Number: <%= jobseeker.id %></h4>
+			                    <p class="card-text">
+									Degree in: <%= jobseeker.degree.name %><br>
+									University: <%= jobseeker.university.name %><br>
+									Latest CGPA: <%= jobseeker.cgpa %><br>
+									Location: <%= jobseeker.location.name %><br>
+									Prefers to work in <%= jobseeker.pref_size %> company<br>
+									Prefers to work  in <%= jobseeker.pref_hours %> hours<br>
+									Has worked for companies in:
+										<li><%= jobseeker.we1.name %></li>
+										<li><%= jobseeker.we2.name %></li>
+										<li><%= jobseeker.we3.name %></li>
+									Knowledge Score: <%= jobseeker.knowledge_score %>%<br>
+									Skill Score: <%= jobseeker.skill_score %>%<br>
+									Activity Score: <%= jobseeker.activity_score %>%<br>
+			                    	</p>
+			                    <p class="card-text"><small class="text-muted">Last Updated: <%= jobseeker.created_at.to_date %></small></p>
+			                    	<% if jobseeker.ok_1? && jobseeker.ok_2?%>
+			                    		<a href="#" class="btn btn-success" style="margin: 2px;">Reference Checked Out - 2</a>
+			                    	<% elsif jobseeker.ok_1? || jobseeker.ok_2?%>
+			                    		<a href="#" class="btn btn-success" style="margin: 2px;">Reference Checked Out - 1</a>			                    
+			                    	<% end %>
+			                    	<a href="#" class="btn btn-primary" style="margin: 2px;">Check Jobseeker Out</a>
+			                    	<a href="#" class="btn btn-primary" style="margin: 2px;">Add to Pool</a>
+			                </div>
+			            </div>
+			        </div>
+			    <% end %>
+
+		    </div>
+		</div>
+
+</div>

@@ -1,0 +1,248 @@
+<div style="margin: 10px;">
+
+	<div class="d-flex justify-content-center text-center" >
+		Candidate Number: <%=@jobseeker.id%><br>
+		*I am an aspiring (Engineer!)<br>
+	</div>
+
+	<br>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h5>Check out how this candidate sells?</h5>
+				VIDEO
+			</div>
+
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h5>How he writes?</h5>
+				Title: <br>
+				Email content: <br>
+			</div>
+
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h5>The deck he makes</h5>
+				Document to view
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h5>Academic Details</h5>
+				Degree in: <%= @jobseeker.degree.name %><br>
+				University: <%= @jobseeker.university.name %><br>
+				Latest CGPA: <%= @jobseeker.cgpa %><br>
+				*Referee 1 (Name, position): "He is a very good student with blablabla"<br>
+				*Referee 2 (Name, position): "He is a very good student with blablabla"<br>
+			</div>
+
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h5>Work Preference</h5>
+				Location: <%= @jobseeker.location.name %><br>
+				Prefers to work in <%= @jobseeker.pref_size %> company<br>
+				Prefers to work  in <%= @jobseeker.pref_hours %> hours<br>
+				*Social Media links (Badges)
+			</div>
+
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h5>Soft Skills Score</h5>
+				Problem Solving & Creativity skills <br>
+				Personality <br>
+				Case Study <br>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container-fluid">
+		<h5 style="text-align: center;">Work Experience</h5>
+		<div class="row">
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h6>Work Experience 1</h6>
+				*Name of company<br>
+				Industry of company: <%= @jobseeker.we1.name %><br>
+				*From when to when<br>
+				*Key learning 1.1<br>
+				*Key learning 1.2<br>
+				*Key learning 1.3<br>
+			</div>
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h6>Work Experience 2</h6>
+				*Name of company<br>
+				Industry of company: <%= @jobseeker.we2.name %><br>
+				*From when to when<br>
+				*Key learning 2.1<br>
+				*Key learning 2.2<br>
+				*Key learning 2.3<br>
+			</div>
+			<div class="col-sm-12 col-lg-4 py-2 text-center">
+				<h6>Work Experience 3</h6>
+				*Name of company<br>
+				Industry of company: <%= @jobseeker.we3	.name %><br>
+				*From when to when<br>
+				*Key learning 3.1<br>
+				*Key learning 3.2<br>
+				*Key learning 3.3<br>
+			</div>
+		</div>
+	</div>
+
+
+
+	<br>
+	<br>
+
+	<div>
+		<h5>Interest</h5>
+		<div>
+			<h6>Interest 1</h6>
+			*Name of Interest/Activity<br>
+			*List of activities <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+		<div>
+			<h6>Interest 2</h6>
+			*Name of Interest/Activity<br>
+			*List of activities <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+		<div>
+			<h6>Interest 3</h6>
+			*Name of Interest/Activity<br>
+			*List of activities <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+	</div>
+
+	<br>
+	<br>
+
+	<div>
+		<h5>Knowledge</h5>
+		<div>
+			<h6>Knowledge 1</h6>
+			*Topic <br>
+			*Medium <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+		<div>
+			<h6>Knowledge 2</h6>
+			*Topic <br>
+			*Medium <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+		<div>
+			<h6>Knowledge 3</h6>
+			*Topic <br>
+			*Medium <br>
+			*View relevant jobtivities!<br>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div>
+		<h5>Skills</h5>
+		<div>
+			<h6>Skill 1</h6>
+			*Skill <br>
+			*Proof <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+		<div>
+			<h6>Skill 2</h6>
+			*Skill <br>
+			*Proof <br>
+			*View relevant jobtivities!<br>
+		</div>
+		<br>
+		<div>
+			<h6>Skill 2</h6>
+			*Skill <br>
+			*Proof <br>
+			*View relevant jobtivities!<br>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div>
+		<h5>Network</h5>
+		*Network 1 (Name, position): "He is a very good student with blablabla"<br>
+		*Network 2 (Name, position): "He is a very good student with blablabla"<br>
+		*Network 3 (Name, position): "He is a very good student with blablabla"<br>
+	</div>
+
+	<br>
+	<br>
+
+
+	<div class="container-fluid" style="font-size: 15px;">
+	    <div class="row">
+	        <div class="col-sm-6 col-lg-3 py-2">
+	            <div class="card h-100" style="background-color: rgb(173, 188, 201)">
+	                <div class="card-body">
+	                    <h4 class="card-title">I learned about bitcoin!</h4>
+	                    <p class="card-text">
+	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    <p class="card-text"><small class="text-muted"><%=@jobseeker.created_at.to_date%></small></p>
+	                   	<a href='#' class="btn btn-primary" style="margin: 2px;">Knowledge</a>
+	                   	<a href='#' class="btn btn-success" style="margin: 2px;">Finance</a>             
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-sm-6 col-lg-3 py-2">
+	            <div class="card h-100" style="background-color: rgb(173, 188, 201)">
+	                <div class="card-body">
+	                    <h4 class="card-title">I volunteered at soup kitchen!</h4>
+	                    <p class="card-text">
+	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    <p class="card-text"><small class="text-muted"><%=@jobseeker.created_at.to_date%></small></p>
+	                   	<a href='#' class="btn btn-danger" style="margin: 2px;">Activity</a>
+	                   	<a href='#' class="btn btn-success" style="margin: 2px;">Volunteering</a>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-sm-6 col-lg-3 py-2">
+	            <div class="card h-100" style="background-color: rgb(173, 188, 201)">
+	                <div class="card-body">
+	                    <h4 class="card-title">I wrote in my new blog!</h4>
+	                    <p class="card-text">
+	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    <p class="card-text"><small class="text-muted"><%=@jobseeker.created_at.to_date%></small></p>
+	                   	<a href='#' class="btn btn-primary" style="margin: 2px;">Skills</a>
+	                   	<a href='#' class="btn btn-success" style="margin: 2px;">Writing</a>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-sm-6 col-lg-3 py-2">
+	            <div class="card h-100" style="background-color: rgb(173, 188, 201)">
+	                <div class="card-body">
+	                    <h4 class="card-title">I went to NALS!</h4>
+	                    <p class="card-text">
+	                    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                    <p class="card-text"><small class="text-muted"><%=@jobseeker.created_at.to_date%></small></p>
+	                   	<a href='#' class="btn btn-primary" style="margin: 2px;">Activity</a>
+	                   	<a href='#' class="btn btn-success" style="margin: 2px;">Student Forum</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+				                               	
+</div>
